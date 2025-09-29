@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UyeGiris</title>
+</head>
+<style>
+     header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    header img {
+      height: 80px;
+      width: auto;
+      cursor: pointer;
+    }
+
+    .search-bar {
+      flex: 1;
+      margin: 0 40px;
+      display: flex;
+      max-width: 600px;
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-right: none;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 12px 20px;
+      border: none;
+      background-color: gray;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      position: relative;
+    }
+    .actions a {
+      text-decoration: none;
+      font-size: 16px;
+      color: black;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+    }
+    .actions i {
+      font-size: 20px;
+    }
+
+     /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%; /* Yanına açılır */
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 160px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 8px 0;
+      z-index: 999;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 16px;
+      font-size: 15px;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .dropdown-menu a:hover {
+      background: #f5f5f5;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    input[type="checkbox"] {
+      margin-right: 8px;
+      transform: scale(1.3); /* Checkbox’u biraz büyütür */
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    main button {
+        padding: 12px 20px;
+        border: none;
+        background-color: darkblue;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+     footer {
+      padding: 20px;
+      text-align: center;
+      color: darkblue;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    footer a {
+        text-decoration: none;
+        display: inline-block;
+        margin: 5px 10px;
+        color: gray;
+    }
+
+</style>
+<body>
+     <header>
+    <img src="wavefshn.jpg.png" alt="wavefshn">
+    
+    <div class="search-bar">
+      <input type="text" placeholder="Ürün ara...">
+      <button>ARA</button>
+    </div>
+    
+    <div class="actions">
+      <div class="dropdown">
+        <a href="#"><i class="fa-solid fa-user"></i> HESAP <i class="fa-solid fa-chevron-down" style="font-size:12px;"></i></a>
+        <div class="dropdown-menu">
+          <a href="#">Üye Girişi</a>
+          <a href="#">Kayıt Ol</a>
+        </div>
+      </div>
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i> SEPET</a>
+    </div>
+  </header>
+  <main>
+    <div class="giris">
+        <p>Giriş Yap</p>
+        <input type="text" placeholder="E-posta">
+        <input type="text" placeholder="Şifre">
+        <p>Şifremi unuttum</p>
+        <button>GİRİŞ YAP</button>
+    </div>
+    
+    <div class="kayit">
+        <p>Üye Ol</p>
+        <input type="text" placeholder="Ad">
+        <input type="text" placeholder="Soyad">
+        <input type="text" placeholder="E-posta">
+        <input type="text" placeholder="Şifre">
+        <input type="text" placeholder="Telefon Numarası">  
+         <form>
+    <label>
+      <input type="checkbox" required>
+      Kampanya, duyuru, bilgilendirmelerden e-posta ile haberdar olmak istiyorum.
+    </label>
+
+    <label>
+      <input type="checkbox" required>
+      Kampanya, sipariş, duyuru bilgilendirmelerden SMS ve WhatsApp ile haberdar olmak istiyorum.
+    </label>
+
+    <label>
+      <input type="checkbox" required>
+      Üyelik koşullarını ve <a href="#">kişisel verilerimin korunmasını</a> kabul ediyorum.
+    </label>
+
+    <button>ÜYE OL</button>
+    </div>
+  </main>
+  <footer>
+    <h2>WAVE FSHN</h2>
+    <a href="#iletişim">İletişim</a>
+    <a href="#hakkımızda">Hakkımızda</a>
+    <a href="#sss">SSS</a>
+    <a href="#kvkk">KVKK</a>
+    <a href="#satışsözleşmesi">Satış Sözleşmesi</a>
+    <a href="#garantiveiade">Garanti ve İade Koşulları</a>
+    <p> © 2025 Wave Fashion. Tüm hakları saklıdır.</p>
+  </footer>
+</body>
+</html>
