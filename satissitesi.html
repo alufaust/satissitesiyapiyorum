@@ -22,11 +22,6 @@
       cursor: pointer;
     }
 
-    .menu a[href="unique"] {
-      text-decoration: none;
-      color: red;
-    }
-
     .search-bar {
       flex: 1;
       margin: 0 40px;
@@ -71,7 +66,6 @@
       font-size: 20px;
     }
 
-    /* Dropdown */
     .dropdown {
       position: relative;
     }
@@ -79,8 +73,8 @@
     .dropdown-menu {
       display: none;
       position: absolute;
-      top: 0;
-      left: 100%; /* Yanına açılır */
+      top: 100%;
+      left: 0;
       background: #fff;
       border: 1px solid #ddd;
       border-radius: 4px;
@@ -101,7 +95,6 @@
       background: #f5f5f5;
     }
 
-    /* Menü */
     .menu {
       width: 220px;
       background: #f8f8f8;
@@ -121,7 +114,11 @@
       cursor: pointer;
     }
 
-    /* Ana düzen */
+    .menu a[href="unique"] {
+      text-decoration: none;
+      color: red;
+    }
+
     main {
       display: flex;
       align-items: flex-start;
@@ -139,7 +136,6 @@
       text-align: center; 
     }
 
-    /* Öne çıkan ürünler grid */
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -183,7 +179,7 @@
     </div>
     
     <div class="actions">
-      <div class="dropdown">
+      <div class="dropdown hesap-dropdown">
         <a href="#"><i class="fa-solid fa-user"></i> HESAP <i class="fa-solid fa-chevron-down" style="font-size:12px;"></i></a>
         <div class="dropdown-menu">
           <a href="#">Üye Girişi</a>
@@ -196,7 +192,6 @@
 
   <main>
     <nav class="menu">
-      <!-- ERKEK -->
       <div class="dropdown">
         <a>ERKEK</a>
         <div class="dropdown-menu">
@@ -211,7 +206,6 @@
         </div>
       </div>
 
-      <!-- KADIN -->
       <div class="dropdown">
         <a>KADIN</a>
         <div class="dropdown-menu">
@@ -226,7 +220,6 @@
         </div>
       </div>
 
-      <!-- UNIQUE -->
       <a href="unique">WAVE UNIQUE</a>
     </nav>
 
@@ -237,17 +230,14 @@
           <div class="product-card">
             <img src="urun1.jpg" alt="Ürün 1">
             <h3>Ürün 1</h3>
-            <p></p>
           </div>
           <div class="product-card">
             <img src="urun2.jpg" alt="Ürün 2">
             <h3>Ürün 2</h3>
-            <p></p>
           </div>
           <div class="product-card">
             <img src="urun3.jpg" alt="Ürün 3">
             <h3>Ürün 3</h3>
-            <p></p>
           </div>
         </div>
       </section>
@@ -266,26 +256,28 @@
   </footer>
 
   <script>
-    // Menü tıklama
     document.querySelectorAll('.menu .dropdown > a').forEach(function(link) {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         let menu = this.nextElementSibling;
 
-        // Açık olanları kapat
         document.querySelectorAll('.menu .dropdown-menu').forEach(function(m) {
           if (m !== menu) m.style.display = 'none';
         });
 
-        // Tıklananı aç/kapat
         menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
       });
     });
 
-    // Dışarıya tıklayınca kapansın
+    document.querySelector('.hesap-dropdown > a').addEventListener('click', function(e) {
+      e.preventDefault();
+      let menu = this.nextElementSibling;
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    });
+
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.dropdown')) {
-        document.querySelectorAll('.menu .dropdown-menu').forEach(function(m) {
+        document.querySelectorAll('.dropdown-menu').forEach(function(m) {
           m.style.display = 'none';
         });
       }
