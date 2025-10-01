@@ -4,242 +4,243 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UyeGiris</title>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 40px;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    * {
+        box-sizing: border-box;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 40px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     header img {
-      height: 80px;
-      width: auto;
-      cursor: pointer;
+        height: 80px;
+        width: auto;
+        cursor: pointer;
     }
 
     .search-bar {
-      flex: 1;
-      margin: 0 40px;
-      display: flex;
-      max-width: 600px;
+        flex: 1;
+        margin: 0 40px;
+        display: flex;
+        max-width: 600px;
     }
     .search-bar input {
-      flex: 1;
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #ddd;
-      border-right: none;
-      border-radius: 4px 0 0 4px;
-      outline: none;
+        flex: 1;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-right: none;
+        border-radius: 4px 0 0 4px;
+        outline: none;
     }
     .search-bar button {
-      padding: 12px 20px;
-      border: none;
-      background-color: gray;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
+        padding: 12px 20px;
+        border: none;
+        background-color: gray;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
     }
 
     .actions {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      position: relative;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        position: relative;
     }
     .actions a {
-      text-decoration: none;
-      font-size: 16px;
-      color: black;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      position: relative;
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
     }
     .actions i {
-      font-size: 20px;
+        font-size: 20px;
     }
 
-     /* Dropdown */
     .dropdown {
-      position: relative;
+        position: relative;
     }
 
     .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 100%; /* Yanına açılır */
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      min-width: 160px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 8px 0;
-      z-index: 999;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        min-width: 160px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 8px 0;
+        z-index: 999;
     }
     .dropdown-menu a {
-      display: block;
-      padding: 10px 16px;
-      font-size: 15px;
-      color: #333;
-      text-decoration: none;
-      transition: background 0.2s;
+        display: block;
+        padding: 10px 16px;
+        font-size: 15px;
+        color: #333;
+        text-decoration: none;
+        transition: background 0.2s;
     }
     .dropdown-menu a:hover {
-      background: #f5f5f5;
+        background: #f5f5f5;
     }
 
     .form-alani {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 40px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
     }
 
     .form-kutu {
-      width: 400px;
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        width: 400px;
+        background: #fff;
+        padding: 30px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     .sekme-basliklari {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #ddd;
-      
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
     }
 
     .sekme-basliklari button {
-      flex: 1;
-      padding: 12px;
-      background: none;
-      border: none;
-      font-size: 16px;
-      font-weight: 500;
-      cursor: pointer;
-      color: darkblue;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        flex: 1;
+        padding: 12px;
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        color: darkblue;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     .sekme-basliklari button.aktif {
-      border-bottom: 2px solid darkblue;
-      color: darkblue;
-      font-weight: bold;
+        border-bottom: 2px solid darkblue;
+        color: darkblue;
+        font-weight: bold;
     }
 
     .form-kutu input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 15px;
-      outline: none;
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 15px;
+        outline: none;
+        box-sizing: border-box;
     }
 
     .form-kutu button.gonder {
-      width: 100%;
-      background: darkblue;
-      color: #fff;
-      padding: 14px;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        width: 100%;
+        background: darkblue;
+        color: #fff;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     .form-kutu button.gonder:hover {
-      background: mediumblue;
+        background: mediumblue;
     }
 
     .form-linkleri {
-    text-align: right;
-    margin-top: 10px;
+        text-align: right;
+        margin-top: 10px;
     }
 
     .form-linkleri a {
-      color: black;
-      font-size: 14px;
-      text-decoration: none;
+        color: black;
+        font-size: 14px;
+        text-decoration: none;
     }
 
     .form-kutu label {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      margin-top: 15px;
-      cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 15px;
+        cursor: pointer;
     }
 
     .form-kutu input[type="checkbox"] {
-      margin-right: 8px;
-      text-decoration: none;
+        margin-right: 8px;
+        text-decoration: none;
     }
 
     .sekme-icerik {
-      display: none;
+        display: none;
     }
 
     .sekme-icerik.aktif {
-      display: block;
+        display: block;
     }
 
-   .gonder {
-    background: #0011aa;
-    color: white;
-    font-weight: bold;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
+    .gonder {
+        background: #0011aa;
+        color: white;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
     }
 
     .checkbox-container {
-      margin-top: 30px;
+        margin-top: 30px;
     }
 
     .checkbox-container label {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-      margin-bottom: 12px;
-      line-height: 1.4;
-      cursor: pointer;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.4;
     }
 
     .checkbox-container input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
     }
 
     .checkbox-container label span {
-      flex: 1;
-      word-break: break-word;
+        flex: 1;
+        word-break: break-word;
     }
 
     footer {
-      padding: 20px;
-      text-align: center;
-      color: darkblue;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding: 20px;
+        text-align: center;
+        color: darkblue;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     footer a {
@@ -249,77 +250,77 @@
         color: gray;
     }
 </style>
-
+</head>
 <body>
-     <header>
+<header>
     <img src="wavefshn.jpg.png" alt="wavefshn">
     
     <div class="search-bar">
-      <input type="text" placeholder="Ürün ara...">
-      <button>ARA</button>
+        <input type="text" placeholder="Ürün ara...">
+        <button>ARA</button>
     </div>
     
     <div class="actions">
-      <div class="dropdown">
-        <a href="#"><i class="fa-solid fa-user"></i> HESAP <i class="fa-solid fa-chevron-down" style="font-size:12px;"></i></a>
-        <div class="dropdown-menu">
-          <a href="#">Üye Girişi</a>
-          <a href="#">Kayıt Ol</a>
+        <div class="dropdown">
+            <a href="#"><i class="fa-solid fa-user"></i> HESAP <i class="fa-solid fa-chevron-down" style="font-size:12px;"></i></a>
+            <div class="dropdown-menu">
+                <a href="#">Üye Girişi</a>
+                <a href="#">Kayıt Ol</a>
+            </div>
         </div>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping"></i> SEPET</a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i> SEPET</a>
     </div>
-  </header>
-  <main>
-    <main>
-  <div class="form-alani">
+</header>
+
+<main>
+<div class="form-alani">
     <div class="form-kutu">
-      <!-- Sekme Başlıkları -->
-      <div class="sekme-basliklari">
-        <button id="giris-btn" class="aktif">Giriş Yap</button>
-        <button id="uye-btn">Üye Ol</button>
-      </div>
-
-      <div class="icerik-wrapper">
-        <div id="giris-yap" class="sekme-icerik aktif">
-          <input type="text" placeholder="E-posta">
-          <div class="sifre-kapsayici">
-            <input type="password" placeholder="Şifre">
-          </div>
-          <button class="gonder">GİRİŞ YAP</button>
-          <div class="form-linkleri">
-            <a href="#">Şifremi Unuttum</a>
-          </div>
+        <div class="sekme-basliklari">
+            <button id="giris-btn" class="aktif">Giriş Yap</button>
+            <button id="uye-btn">Üye Ol</button>
         </div>
 
-        <div id="uye-ol" class="sekme-icerik">
-          <input type="text" placeholder="Ad">
-          <input type="text" placeholder="Soyad">
-          <input type="text" placeholder="Telefon Numarası">
-          <input type="text" placeholder="E-posta">
-          <input type="password" placeholder="Şifre">
-          <input type="password" placeholder="Şifre Tekrar">
-        <div class="checkbox-container">
-          <label>
-            <input type="checkbox" required>
-            <span>Kampanya, duyuru, bilgilendirmelerden e-posta ile haberdar olmak istiyorum.</span>
-          </label>
-          <label>
-            <input type="checkbox" required>
-            <span>Kampanya, sipariş, duyuru bilgilendirmelerden SMS ve WhatsApp ile haberdar olmak istiyorum.</span>
-          </label>
-          <label>
-            <input type="checkbox" required>
-            <span><a href="#">Üyelik koşullarını</a> ve <a href="#">kişisel verilerimin korunmasını</a> kabul ediyorum.</span>
-          </label>
-          <button class="gonder">ÜYE OL</button>
-          </div>  
+        <div class="icerik-wrapper">
+            <div id="giris-yap" class="sekme-icerik aktif">
+                <input type="text" placeholder="E-posta">
+                <div class="sifre-kapsayici">
+                    <input type="password" placeholder="Şifre">
+                </div>
+                <button class="gonder">GİRİŞ YAP</button>
+                <div class="form-linkleri">
+                    <a href="#">Şifremi Unuttum</a>
+                </div>
+            </div>
+
+            <div id="uye-ol" class="sekme-icerik">
+                <input type="text" placeholder="Ad">
+                <input type="text" placeholder="Soyad">
+                <input type="text" placeholder="Telefon Numarası">
+                <input type="text" placeholder="E-posta">
+                <input type="password" placeholder="Şifre">
+                <input type="password" placeholder="Şifre Tekrar">
+                <div class="checkbox-container">
+                    <label>
+                        <input type="checkbox" required>
+                        <span>Kampanya, duyuru, bilgilendirmelerden e-posta ile haberdar olmak istiyorum.</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" required>
+                        <span>Kampanya, sipariş, duyuru bilgilendirmelerden SMS ve WhatsApp ile haberdar olmak istiyorum.</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" required>
+                        <span><a href="#">Üyelik koşullarını</a> ve <a href="#">kişisel verilerimin korunmasını</a> kabul ediyorum.</span>
+                    </label>
+                    <button class="gonder">ÜYE OL</button>
+                </div>  
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 </main>
-  <footer>
+
+<footer>
     <h2>WAVE FSHN</h2>
     <a href="#iletişim">İletişim</a>
     <a href="#hakkımızda">Hakkımızda</a>
@@ -328,26 +329,27 @@
     <a href="#satışsözleşmesi">Satış Sözleşmesi</a>
     <a href="#garantiveiade">Garanti ve İade Koşulları</a>
     <p> © 2025 Wave Fashion. Tüm hakları saklıdır.</p>
-  </footer>
-  <script>
-  const girisBtn = document.getElementById("giris-btn");
-  const uyeBtn = document.getElementById("uye-btn");
-  const girisIcerik = document.getElementById("giris-yap");
-  const uyeIcerik = document.getElementById("uye-ol");
+</footer>
 
-  girisBtn.addEventListener("click", () => {
+<script>
+const girisBtn = document.getElementById("giris-btn");
+const uyeBtn = document.getElementById("uye-btn");
+const girisIcerik = document.getElementById("giris-yap");
+const uyeIcerik = document.getElementById("uye-ol");
+
+girisBtn.addEventListener("click", () => {
     girisBtn.classList.add("aktif");
     uyeBtn.classList.remove("aktif");
     girisIcerik.classList.add("aktif");
     uyeIcerik.classList.remove("aktif");
-  });
+});
 
-  uyeBtn.addEventListener("click", () => {
+uyeBtn.addEventListener("click", () => {
     uyeBtn.classList.add("aktif");
     girisBtn.classList.remove("aktif");
     uyeIcerik.classList.add("aktif");
     girisIcerik.classList.remove("aktif");
-  });
+});
 </script>
 </body>
 </html>
