@@ -221,6 +221,10 @@
         display: block;
     }
 
+    .sekme-icerik input {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
     .gonder {
         background: #0011aa;
         color: white;
@@ -285,7 +289,7 @@
             <a href="#"><i class="fa-solid fa-user"></i> HESAP <i class="fa-solid fa-chevron-down" style="font-size:12px;"></i></a>
             <div class="dropdown-menu">
                 <a href="#">Üye Girişi</a>
-                <a href="#">Kayıt Ol</a>
+                <a href="#">Üye Ol</a>
             </div>
         </div>
         <a href="#"><i class="fa-solid fa-cart-shopping"></i> SEPET</a>
@@ -352,24 +356,24 @@
 </footer>
 
 <script>
-const girisBtn = document.getElementById("giris-btn");
-const uyeBtn = document.getElementById("uye-btn");
-const girisIcerik = document.getElementById("giris-yap");
-const uyeIcerik = document.getElementById("uye-ol");
+    const girisBtn = document.getElementById("giris-btn");
+    const uyeBtn = document.getElementById("uye-btn");
+    const girisIcerik = document.getElementById("giris-yap");
+    const uyeIcerik = document.getElementById("uye-ol");
 
-girisBtn.addEventListener("click", () => {
-    girisBtn.classList.add("aktif");
-    uyeBtn.classList.remove("aktif");
-    girisIcerik.classList.add("aktif");
-    uyeIcerik.classList.remove("aktif");
-});
+    girisBtn.addEventListener("click", () => {
+        girisBtn.classList.add("aktif");
+        uyeBtn.classList.remove("aktif");
+        girisIcerik.classList.add("aktif");
+        uyeIcerik.classList.remove("aktif");
+    });
 
-uyeBtn.addEventListener("click", () => {
-    uyeBtn.classList.add("aktif");
-    girisBtn.classList.remove("aktif");
-    uyeIcerik.classList.add("aktif");
-    girisIcerik.classList.remove("aktif");
-});
+    uyeBtn.addEventListener("click", () => {
+        uyeBtn.classList.add("aktif");
+        girisBtn.classList.remove("aktif");
+        uyeIcerik.classList.add("aktif");
+        girisIcerik.classList.remove("aktif");
+    });0
 </script>
 </body>
 </html>
